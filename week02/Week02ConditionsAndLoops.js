@@ -141,3 +141,13 @@ Question 6: Debugging an infinite loop! \n`);
 
 
 console.log('-----------Finished------------')
+
+
+
+
+
+
+function addTwoNumbers(param1, param2){
+  return param1 + param2
+}
+console.log (addTwoNumbers(5,20));
