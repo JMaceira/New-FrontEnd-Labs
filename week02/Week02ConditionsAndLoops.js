@@ -123,7 +123,7 @@ Question 5: Loops! \n`);
 
 console.log(`--------------------------
 Question 6: Debugging an infinite loop! \n`);
-
+"hello world"
 /**
  * Step 1: Read through the written code below.
  *         Figure out why it's causing an infinite loop & fix the syntax.
