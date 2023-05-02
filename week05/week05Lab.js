@@ -57,7 +57,7 @@ console.log(
  *
  * ↓ YOUR CODE HERE ↓ */
 // "On July 20th 1969, Niel Armstrong was the first person to set foot on the Earth's moon."
-
+console.log(`On July 20th ${person.year}, ${person.firstname} ${person.lastname} was the first person to set foot on the Earth's moon`);
 /*-------------------------------------------------------*/
 // Question 2: Instance of a Class
 console.log(`--------------------------
@@ -85,7 +85,8 @@ greeting.hello()
  * Step 3: A greeting should print to the console
  *
  * ↓ YOUR CODE HERE ↓ */
-
+let myGreeting = new Greeting('John', 'MA')
+myGreeting.hello()
 /*-------------------------------------------------------*/
 // Question 3: myBook
 console.log(`--------------------------
@@ -115,6 +116,14 @@ class Book {
  *
  * ↓ YOUR CODE HERE ↓ */
 
+let myBook = new Book("Pride and Prejudice", "Jane Austen")
+console.log(myBook.title);
+console.log(myBook.author);
+console.log(myBook.describe());
+
+let yourBook = new Book("Can't Hurt Me", "David Goggins")
+console.log(yourBook.describe());
+
 /*-------------------------------------------------------*/
 // Question 4: Create a Class
 console.log(`--------------------------
@@ -129,6 +138,23 @@ Question 4: Create a Class \n`)
  *
  *
  * ↓ YOUR CODE HERE ↓ */
+class Fruit {
+  constructor(name, color, taste){
+    this.name = name;
+    this.color = color;
+    this.taste = taste;
+  } 
+  describe () {
+    return `A ${this.name} is ${this.color} and has a ${this.taste} taste.`
+  }
+
+}
+
+let fruit1 = new Fruit("lime", "green", "sour")
+let fruit2 = new Fruit("banana", "yellow", "sweet")
+
+console.log(fruit1.describe())
+console.log(fruit2.describe())
 
 /*-------------------------------------------------------*/
 // Question 5: Inheritance and Polymorphism
@@ -138,7 +164,7 @@ Question 5: Inheritance and Polymorphism \n`)
 // Look at the provided code below. Notice how Student and Teacher inherit from the Person class through the use of the "extends" and "super" key words. Also, how Student has a redefined details method that is more appropriate than the details method it would have inherited from the Person super class...
 
 class Person {
-  constructor(name, role) {
+  constructor(name, role,) {
     this.name = name
     this.role = role
   }
@@ -159,11 +185,19 @@ class Student extends Person {
   }
 }
 
+let student = new Student("Jacky", "student")
+console.log(student.introduction());
+console.log(student.details());
+
 class Teacher extends Person {
-  constructor(name, role) {
-    super(name, role)
+  constructor(name, role,) {
+    super(name, role,)
   }
 }
+
+let teacher = new Teacher("Mr. Bean", "teacher");
+console.log(teacher.introduction());
+console.log(teacher.details());
 
 /*
  * Using the provided code above:
@@ -190,6 +224,15 @@ class Parent {
     console.log(`${this.name} Addams is ${this.age} years old.`)
   }
 }
+
+class Child extends Parent{
+  constructor(name, age) {
+    super(name, age)
+  }
+}
+
+let child = new Child("Pugsley","10");
+child.details();
 
 /*
  * Using the provided code above:
