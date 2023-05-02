@@ -185,6 +185,15 @@ class Student extends Person {
   }
 }
 
+/*
+ * Using the provided code above:
+ * Step 1: Instantiate a new student called student with arguments of "Jacky" and "student"
+ * Step 2: Instantiate a new teacher called teacher with arguments of "Mr. Bean" and "teacher"
+ * Step 3: Call the introduction method on your new student instance AND the details method, make sure that the results are printed to the console.
+ * Step 4: Call the introduction method on your new teacher instance AND the details method, make sure that the results are printed to the console.
+ *
+ * ↓ YOUR CODE HERE ↓ */
+
 let student = new Student("Jacky", "student")
 console.log(student.introduction());
 console.log(student.details());
@@ -198,16 +207,6 @@ class Teacher extends Person {
 let teacher = new Teacher("Mr. Bean", "teacher");
 console.log(teacher.introduction());
 console.log(teacher.details());
-
-/*
- * Using the provided code above:
- * Step 1: Instantiate a new student called student with arguments of "Jacky" and "student"
- * Step 2: Instantiate a new teacher called teacher with arguments of "Mr. Bean" and "teacher"
- * Step 3: Call the introduction method on your new student instance AND the details method, make sure that the results are printed to the console.
- * Step 4: Call the introduction method on your new teacher instance AND the details method, make sure that the results are printed to the console.
- *
- * ↓ YOUR CODE HERE ↓ */
-
 /*-------------------------------------------------------*/
 // Question 6: Inheritance
 console.log(`--------------------------
@@ -225,15 +224,6 @@ class Parent {
   }
 }
 
-class Child extends Parent{
-  constructor(name, age) {
-    super(name, age)
-  }
-}
-
-let child = new Child("Pugsley","10");
-child.details();
-
 /*
  * Using the provided code above:
  * Step 1: Create a subclass called Child that inherits the name and age properties from the Parent super class.
@@ -242,6 +232,15 @@ child.details();
  * HINT: You should be using vital key terms like extends and super
  *
  * ↓ YOUR CODE HERE ↓ */
+
+class Child extends Parent{
+  constructor(name, age) {
+    super(name, age)
+  }
+}
+
+let child = new Child("Pugsley","10");
+child.details();
 
 /*-------------------------------------------------------*/
 // Question 7: Put it all together
