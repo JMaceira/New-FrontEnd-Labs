@@ -62,3 +62,52 @@ describe('Week 6 Lab Tests:', () => {
   })
   /*--------------------------NEW TESTS BELOW-------------------------------*/
 })
+
+
+
+describe('TodoList Task', () => {
+
+class TodoList {
+  constructor(tasks) {
+      this.tasks = tasks
+  }
+
+  ///this has a bug have to fix
+  addNewTodo(task) {
+      this.task.push(task)
+  }
+
+  getIncomplete() {
+      return this.task.filter(task => !task.complete)
+  }
+
+  getTaskById(id) {
+     return this.task.find(task => task.id === id)
+  }
+}
+
+  const thingsToDo = [
+                    {name: 'do laundry', id: 1, completed: false},
+                    {name: 'wash dishes', id: 2, completed: true},
+                    {name: 'walk dog', id: 3, completed: true},
+                    {name: 'water plants', id: 4, completed: false},
+                  ]
+
+        const myList = new TodoList(thingsToDo)
+        
+        
+        ///{task: thingsToDo}
+
+        it('gets a task by its id', () => {
+          expect(myList.getTaskById(1)).to.deep.equal({name: 'do laundry', id: 1, completed: false});
+        })
+
+
+        //TODO - getIncomplete
+let incomplete = myList.getIncomplete() ///this is not working properly need to fix 
+        for(let task of incomplete) {
+          it('should return all incomplete tasks', () => {
+            expect(task).to.deep.equal(false)
+          })
+        }
+}) 
