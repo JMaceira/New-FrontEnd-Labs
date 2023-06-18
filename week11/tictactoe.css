@@ -1,0 +1,37 @@
+.container {
+    background: rgb(12, 73, 188);
+    display: auto;
+    border: 5px solid black;
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+  .grid {
+    justify-content: center;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    grid-gap: 5px;
+  }
+  
+  .cell {
+   justify-content: center;
+   align-items: center;
+   display: flex;
+   font-size: 1.5rem;
+   font-weight: bold;
+   background: white;
+ }
+
+#button {
+    display: block;
+}
+
+
+#h1, #h2, #h4 {
+  color: white;
+}
+
+#h4 {
+  padding-top: 10px;
+}

@@ -38,13 +38,19 @@
 	* 
 	* ↓ YOUR CODE HERE ↓ */
 
+let div = $('.put-here');
+let input = $('#input-value');
 
+// .. step 1 .. //
+function replaceTextInDiv() {
+	// .. step 2.. //
+	let replaceText = input.val();
 
+	div.text(replaceText);
 
-
-
-
-
+	// .. step 3 .. //
+	input.val('');
+}
 
 
 /*------------------------------------------------*/
@@ -52,17 +58,16 @@
  
 /* In the HTML file, there is an image of a dog in the DIV with a class name of "dog".  You will programmatically add 2 more images, one before the dog DIV and another image after the dog DIV.
 	* Step 1: Insert a DIV element with an IMAGE nested inside BEFORE the dog DIV. The image should be: <img src='images/fish.png' width='200'>.(See documentation: https://api.jquery.com/before/)
-	* Step 2: Insert a DIV element with an IMAGE nested inside BEFORE the dog DIV. The image should be:<img src='images/cat.png' width='200'>. (See documentation: https://api.jquery.com/after/)
+	* Step 2: Insert a DIV element with an IMAGE nested inside AFTER the dog DIV. The image should be:<img src='images/cat.png' width='200'>. (See documentation: https://api.jquery.com/after/)
 	* Step 3: When done, there should be three images on the screen: fish, dog, cat. 
 	* 
 	* ↓ YOUR CODE HERE ↓ */
 
+// .. step 1 .. //
+$('.dog').before("<div><img src='images/fish.png' width='200'></div>");
 
-	
-
-
-
-
+// .. step 2 .. //
+$('.dog').after("<div><img src='images/cat.png' width='200'></div>");
 
 
 /*-------------------------------------------------*/
@@ -76,9 +81,9 @@
 	* ↓ YOUR CODE HERE ↓ */
 
 
-
-
-	
+// .. step 1 .. //
+$("#lorem2").remove();
+// .. step 2 .. // saved and removed succesfully
 
 
 
@@ -110,10 +115,19 @@ $.get(CATS_API_URL, (data)=> {
  * 
  * ↓ YOUR CODE HERE ↓ */
 
+// .. step 1 .. //
+let Jokes_Api_Url = 'https://official-joke-api.appspot.com/random_joke';
 
+// .. step 2 .. //
+$.get(Jokes_Api_Url, (data) => {
+	console.log(data);
 
+	// .. step 3 .. //
+	$('.jokes').prepend(`<p>${data.setup}</p>`);
 
-
+	// .. step 4 .. //
+	$('.jokes').append(`<p>${data.punchline}`);
+})
 
 
 
@@ -142,12 +156,26 @@ $.get(CATS_API_URL, (data)=> {
 	*
 	* ↓ YOUR CODE HERE ↓ */
 
+	// .. step 4 .. //
+// $.get('http://localhost:3000/gradebook', (data) => {
+// 	console.log(data);
+// })
 
-	
 
+	// .. step 5 .. //
+$.get('http://localhost:3000/gradebook/7', (data) => {
+	console.log(data);
 
+	// .. step 6 .. // 
 
+	$('.result').text(data.firstname + " " + data.lastname + ", Grade: "  + data.grade + "%");
+})
 
+	// .. step 7 .. // 
+	$.get('http://localhost:3000/gradebook/5', (data) => {
+		console.log(data);
+	$('.new').text(data.firstname + " " + data.lastname + ", Grade: "  + data.grade + "%");
+	}) 
 
 
 /*--------------------------------------------------*/
