@@ -42,9 +42,41 @@ Part 1: Create a form with only JavaScript`)
            Do the same steps, appending a label/input for Email, and a submit button to your form.
  * ↓ YOUR CODE HERE ↓ */
 
-// console.log(myForm)
+ // step 1-3 //
+let myForm = document.createElement('form');
+// step 1-3 //
+
+// step 4 //
+let myLabel = document.createElement('label');
+let myInput = document.createElement('input');
+// step 4 //
+
+// step 5 //
+myLabel.innerHTML = 'Name';
+
+// step 6 //
+myForm.append(myLabel);
+myForm.append(myInput);
+
+// step 7 //
+document.body.append(myForm)
+
+let myEmailLabel = document.createElement('label');
+let myEmailInput = document.createElement('input');
+
+myEmailLabel.innerHTML = 'Email'
+
+mySubmitButton = document.createElement('button')
+
+mySubmitButton.innerHTML = 'Submit'
+
+myForm.append(myEmailLabel)
+myForm.append(myEmailInput)
+myForm.append(mySubmitButton)
+
+console.log(myForm)
 //Question: Besides changing the innerHTML, what other HTML things can we change using JavaScript?
-//Answer:
+//Answer: We can change css, class, id, and styles.
 
 /*------------------------ Styling a form with only JavaScript------------------------*/
 console.log(`-------------------------- 
@@ -60,8 +92,17 @@ Part 2: Styling our form with only JavaScript`)
  *
  * ↓ YOUR CODE HERE ↓ */
 
+ // step 1 //
+   myForm.style.backgroundColor = 'red'
+   myForm.style.color = 'white'
+   myForm.style.display = 'flex'
+   myForm.style.flexDirection = 'column'
+   myForm.style.maxWidth = '250px'
+
+
 //Question: Do you prefer styling with JavaScript or CSS?
-//Answer:
+//Answer: I like using css styling more as of now because it would make my code cleaner. Instead of having all of the above in a javascript file--
+// and then also having my functions and coding in there as well it would be seperate in it's own css file.
 
 /*------------------------ Creating a table with only JavaScript ------------------------*/
 console.log(`-------------------------- 
@@ -80,10 +121,27 @@ Part 3: Creating a table with only JavaScript`)
  * Final Step: Style your table using JavaScript starting with a border. You may need to target more element/nodes than we did with myTable.
  * ↓ YOUR CODE HERE ↓ */
 
-// console.log(myTable)
+let myTable = document.createElement('table')
+let tableRow = document.createElement('tr')
+let tableData = document.createElement('td')
+let tableData2 = document.createElement('td')
+
+tableData.innerHTML = 'Name'
+tableData2.innerHTML = 'Email'
+
+myTable.append(tableRow);
+tableRow.append(tableData);
+tableRow.append(tableData2);
+
+document.body.append(myTable)
+
+myTable.style.border = '2px dashed purple'
+
+console.log(myTable)
+
 //Question: While this is clearly a more round-about way of making a table, how can using JavaScript in this way
 //          more beneficial than HTML?
-//Answer:
+//Answer: 
 
 /*------------------------ Changing our body background on click ------------------------*/
 console.log(`-------------------------- 
@@ -104,9 +162,17 @@ Part 4: Changing our background on click`)
  *
  * ↓ YOUR CODE HERE ↓ */
 
+// step 2-3 //
+const myButton = document.getElementById('myButton')
+
+// step 4-5 // 
+myButton.addEventListener('click', () => {
+   document.body.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+   })
+
 //Question: What other event listeners are there?
 //             Try them out by replacing 'click' in your function above!
-//Answer:
+//Answer: There are mouse events, keyboard events. form events, and window events.
 
 console.log(`-----------Finished------------`)
 
@@ -119,3 +185,46 @@ console.log(`-----------Finished------------`)
  *    and append a new <tr> containing those values to your tBody element.
  *    Look into event.preventDefault(). Buttons inside of forms have a default setting to refresh the page.
  */
+
+// .. challenge 1 .. //
+const createdButton = document.createElement('button')
+document.body.append(createdButton)
+createdButton.innerHTML = 'Submit'
+
+createdButton.addEventListener("click", () => {
+   if (createdDiv.innerHTML == 'Hello') {
+      createdDiv.innerHTML = 'World'
+   } else {
+      createdDiv.innerHTML = 'Hello'
+   }
+})
+
+console.log(createdButton)
+
+const createdDiv = document.createElement("div")
+document.body.append(createdDiv)
+createdDiv.style.width = "40px";
+createdDiv.style.height = "40px";
+createdDiv.style.background = "red";
+createdDiv.style.color = "white";
+createdDiv.innerHTML = 'Hello'
+console.log(createdDiv)
+
+
+// ..challenge 2.. // 
+
+const newImage = new Image(350,250)
+newImage.src = "https://media.ed.edmunds-media.com/pagani/ns/pagani_ns_91522104_717.jpg"
+document.body.appendChild(newImage); 
+
+newImage.addEventListener("click", () => {
+   if (newImage.style.display == 'hidden') {
+      newImage.style.display = 'block'
+   } else {
+      newImage.style.display  = 'hidden'
+   }
+})
+
+console.log(newImage)
+
+

@@ -1,0 +1,108 @@
+.box-title {
+    font-weight: bold;
+    color: green;
+}
+​
+.item:nth-child(even) {
+    color: red;
+}
+​
+.item {
+    text-transform: uppercase;
+}
+​
+.box-description {
+    text-align: center;
+}
+​
+.box {
+    border-style: solid;
+    margin: 15px;
+    display: none;
+    padding: 20px;
+}
+​
+input[type="email"] {
+    border: 1px solid gray;
+}
+​
+input[type="text"] {
+    background-color: #f2f2f2;
+}
+​
+/******* END PART 1 **********/
+​
+​
+/******* BEGIN PART 2 **********/
+​
+.item:first-child {
+    text-decoration: underline;
+}
+​
+.item:last-child {
+    color: purple;
+}
+​
+.item {
+    display: none;
+}
+​
+.item:nth-child(odd) {
+    font-weight: bold;
+}
+​
+.item:nth-child(even) {
+    color: blue;
+}
+​
+ul li.item[data-category="fruit"] {
+    color: red;
+}
+​
+ul li.item[data-category="vegetable"] {
+    color: blue;
+    background-color: yellow;
+}
+​
+ul li.item[data-category="grain"] {
+    color: green;
+    font-weight: bold;
+}
+​
+ul .item[data-category="fruit"] {
+    text-transform: uppercase;
+}
+​
+ul li.item:nth-child(odd) {
+    text-decoration: underline;
+}
+​
+/*** BEGIN PART 3 *****/
+​
+ul li.item:nth-of-type(even) {
+    color: purple;
+}
+​
+form input[type="text"] :disabled{
+    opacity: 0.5;
+}
+​
+form:not(.disabled) {
+    border: 1px solid gray;
+}
+​
+input[type="text"][placeholder="Enter your name"] {
+    background-color: #f2f2f2;
+}
+​
+form input[type="email"] {
+    border: 1px solid gray;
+}
+​
+.box > .box-title {
+    font-weight: bold;
+}
+​
+.box > .box-description {
+    text-align: center;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Room</title>
+</head>
+<style>
+    #chatContainer {
+        border: 1px solid black; 
+        height: 500px
+    }
+</style>
+<body>
+  <div id="chatContainer">
+  </div>
+  <div>
+    <form id="chatForm">
+      <label for="NameInput">Name</label>
+      <input type="text" name= "Name" id="NameInput" placeholder="Enter your Name">
+       
+      <label for="messageInput">Message</label>
+        <input type="text" name= "message" id="messageInput" placeholder="Enter your message">
+        <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <script src="chat.js"></script>
+</body>
+</html>
